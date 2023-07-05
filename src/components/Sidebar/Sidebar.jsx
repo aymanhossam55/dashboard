@@ -13,6 +13,7 @@ import logo from '../../assets/logo.png'
 import LogoutIcon from '@mui/icons-material/Logout';
 import {useState} from "react";
 import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
 
 const Sidebar = ({children}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -97,7 +98,9 @@ const Sidebar = ({children}) => {
                     <span><LogoutIcon/></span> Log out
                 </button>
             </div>
-            <main className='content'>{children}</main>
+            <Container>
+                <main className='content-pages mt-5'>{children}</main>
+            </Container>
         </div>
     );
 };

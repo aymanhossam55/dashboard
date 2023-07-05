@@ -1,7 +1,11 @@
 import './departments.css'
+import {TopSearch} from "../../components/TopSerarch/TopSearch.jsx";
 
 export const Departments = () => {
     return (
-        <>Departments</>
+        <div className='departments'>
+            <TopSearch/>
+            Departments
+        </div>
     )
 }

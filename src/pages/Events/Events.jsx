@@ -1,7 +1,11 @@
 import './events.css'
+import {TopSearch} from "../../components/TopSerarch/TopSearch.jsx";
 
 export const Events = () => {
     return (
-        <>Events</>
+        <div className='events'>
+            <TopSearch/>
+            Events
+        </div>
     )
 }
