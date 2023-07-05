@@ -1,85 +1,104 @@
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import AppsIcon from '@mui/icons-material/Apps';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import ContentPasteIcon from '@mui/icons-material/ContentPaste';
+import {NavLink} from "react-router-dom";
+import Diversity2Icon from '@mui/icons-material/Diversity2';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import SettingsIcon from '@mui/icons-material/Settings';
+import './sidebar.css'
+import logo from '../../assets/logo.png'
+import LogoutIcon from '@mui/icons-material/Logout';
+import {useState} from "react";
+import MenuIcon from '@mui/icons-material/Menu';
 
-const drawerWidth = 240;
-export const Sidebar = () => {
+const Sidebar = ({children}) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
+    const menuItem = [
+        {
+            path: "/",
+            name: "Dashboard",
+            icon: <AppsIcon/>
+        },
+        {
+            path: "/members",
+            name: "Members",
+            icon: <Diversity3Icon/>
+        },
+        {
+            path: "/departments",
+            name: "Departments",
+            icon: <ApartmentIcon/>
+        },
+        {
+            path: "/attendance",
+            name: "Attendance",
+            icon: <AccessTimeIcon/>
+        },
+        {
+            path: "/leaves",
+            name: "Leaves",
+            icon: <CalendarTodayIcon/>
+        },
+        {
+            path: "/projects",
+            name: "Projects",
+            icon: <ContentPasteIcon/>
+        }
+        ,
+        {
+            path: "/events",
+            name: "Events",
+            icon: <Diversity2Icon/>
+        }
+        ,
+        {
+            path: "/payroll",
+            name: "Payroll",
+            icon: <MonetizationOnIcon/>
+        }
+        ,
+        {
+            path: "/settings",
+            name: "Settings",
+            icon: <SettingsIcon/>
+        }
+    ]
     return (
-        <Box sx={{display: 'flex'}}>
-            <CssBaseline/>
-            <AppBar
-                position="fixed"
-                sx={{width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`}}
-            >
-                {/*<Toolbar>*/}
-                {/*    <Typography variant="h6" noWrap component="div">*/}
-                {/*        Permanent drawer*/}
-                {/*    </Typography>*/}
-                {/*</Toolbar>*/}
-            </AppBar>
-            <Drawer
-                sx={{
-                    width: drawerWidth,
-                    flexShrink: 0,
-                    '& .MuiDrawer-paper': {
-                        width: drawerWidth,
-                        boxSizing: 'border-box',
-                    },
-                }}
-                variant="permanent"
-                anchor="left"
-            >
-                <Toolbar/>
-                <Divider/>
-                <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
-                                </ListItemIcon>
-                                <ListItemText primary={text}/>
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider/>
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}
-                                </ListItemIcon>
-                                <ListItemText primary={text}/>
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
-            </Drawer>
-            <Box
-                component="main"
-                sx={{flexGrow: 1, bgcolor: 'background.default', p: 3}}
-            >
-                <Toolbar/>
-                <Typography paragraph>
-
-                </Typography>
-                <Typography paragraph>
-
-                </Typography>
-            </Box>
-        </Box>
-    )
-}
+        <div className='d-flex'>
+            <div className="sidebar me-4" style={{width: isOpen ? "240px" : "60px"}}>
+                <div className="top_section" style={{padding: isOpen ? '20px 15px' : '20px 18px'}}>
+                    <div className="logo" style={{display: isOpen ? "block" : "none"}}>
+                        <img src={logo} alt='logo'/>
+                    </div>
+                    <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars-side">
+                        <MenuIcon onClick={toggle}/>
+                    </div>
+                </div>
+                {/*<div className='back-forword'><ArrowBackIcon/></div>*/}
+                {
+                    menuItem.map((item, index) => (
+                        <NavLink
+                            to={item.path} key={index} className="link-side" style={{
+                            padding: isOpen ? "10px" : "10px 5px"
+                        }}>
+                            <div className="icon"
+                                 style={{
+                                     padding: isOpen ? "" : "5px 0"
+                                 }}>{item.icon}</div>
+                            <div className="link_text" style={{display: isOpen ? "block" : "none"}}>{item.name}</div>
+                        </NavLink>
+                    ))
+                }
+                <button className='btn-main mt-md-4' style={{display: isOpen ? "block" : "none"}}>
+                    <span><LogoutIcon/></span> Log out
+                </button>
+            </div>
+            <main className='content'>{children}</main>
+        </div>
+    );
+};
+export default Sidebar
