@@ -11,7 +11,7 @@ import {Projects} from "./pages/Projects/Projects";
 import {Events} from "./pages/Events/Events";
 import {Payroll} from "./pages/Payroll/Payroll.jsx";
 import {Settings} from "./pages/Settings/Settings";
-import { Signup } from './pages/Signup/Signup';
+import {Signup} from './pages/Signup/Signup';
 
 function App() {
     return (

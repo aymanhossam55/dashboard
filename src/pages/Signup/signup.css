@@ -1,46 +1,53 @@
-*{
+* {
     padding: 0;
     margin: 0;
-    
+
 }
-.signup{
+
+.signup {
     width: 100%;
     height: 100%;
 }
-.contentt{
+
+.contentt {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
 }
-img{
+
+.image-signup img {
     width: 400px;
-    flex: left;
+    float: left;
     height: 100%;
     margin-top: 25%;
-    
+
 }
-.sign{
+
+.sign {
     margin-top: 30px;
     margin-right: 10%;
 }
-.sign h1{
+
+.sign h1 {
     font-size: 25px;
-    font-weight:700;
+    font-weight: 700;
     color: #2B3674;
 
 
 }
-.sign p{
+
+.sign p {
     font-size: 12px;
-    color:#E0E5F2;
+    color: #E0E5F2;
 }
+
 /* .button{
     width: 400px;
     margin: auto;
 } */
-.sign button{
+.sign button {
     width: 420px;
     height: 50px;
     border: none;
@@ -48,106 +55,120 @@ img{
     text-align: center;
     padding: 8px 0px;
     color: #2B3674;
-    font:15px;
+    font: 15px;
     font-weight: 300px;
     background-color: #F4F7FE;
     /* margin-left: 10%; */
 }
-.hr{
+
+.hr {
     display: flex;
     flex-direction: row;
-    width: 400px ;
+    width: 400px;
     margin: auto;
 }
-hr{
+
+hr {
     background-color: red;
     height: 1px;
     width: 100px;
 }
-.or{
+
+.or {
     text-align: center;
     margin-top: 30px;
 }
-.form{
+
+.form {
     width: 450px;
 }
-.form h2{
+
+.form h2 {
     font-size: 14px;
     line-height: 14px;
-    color:#2B3674 ;
+    color: #2B3674;
     margin-top: 10px;
 }
-.form input{
+
+.form input {
     width: 450px;
     border-radius: 8px;
     padding: 14px 15px;
     margin-top: 10px;
     margin-bottom: 10px;
     outline: none;
-    border: 1px solid #E0E5F2 ;
+    border: 1px solid #E0E5F2;
 }
- .form input::placeholder{
+
+.form input::placeholder {
     font-size: 14px;
     line-height: 14px;
-    color:#E0E5F2;
+    color: #E0E5F2;
 }
 
- .form .icon{
-float: right;
-color: #E0E5F2;
-z-index: 10;
-position: absolute;
-right: 12%;
-bottom: 5%;
+.form .icon {
+    float: right;
+    color: #E0E5F2;
+    z-index: 10;
+    position: absolute;
+    right: 12%;
+    bottom: 5%;
 }
 
 
- .form h3{
-    color:#2B3674 ;
+.form h3 {
+    color: #2B3674;
     font-size: 18px;
     margin-top: 20px;
 
 }
-.span{
+
+.span {
     color: #4318FF;
 
 }
-.form h3 .circle{
+
+.form h3 .circle {
 
     font-size: 30px;
 }
-.submit{
-     background-color: #2B3674;
-     border-radius: 8px;
-     outline: none;
-     border: none;
-     color: #fff;
+
+.submit {
+    background-color: #2B3674;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    color: #fff;
 
 
 }
-.submit::placeholder{
+
+.submit::placeholder {
     text-align: center;
     font-size: 20px;
     color: #fff;
     padding: 15px 0;
 }
- .form .text{
+
+.form .text {
     margin-top: 25px;
-    color:#4318FF;
+    color: #4318FF;
     line-height: 16px;
     font-size: 20px;
- }
- .sign-in{
+}
+
+.sign-in {
     color: #2B3674;
     font-weight: bold;
- }
- .form .rights{
-    
+}
+
+.form .rights {
+
     float: right;
     margin-top: 15%;
     font-size: 20px;
- }
- 
+}
+
 /* @media(min-width:390px){
   .signup{
     width: 100%;
@@ -180,34 +201,39 @@ bottom: 5%;
         margin-left: 10%;
     }
 } */
-@media(max-width:768px){
-    img{
+@media (max-width: 768px) {
+    img {
         width: 100%;
     }
-    .sign{
+
+    .sign {
         margin-top: 38%;
         width: 100%;
     }
-    .form{
+
+    .form {
         width: 350px;
         margin: auto;
     }
+
     /* .sign button{
         width: 350px;
         margin-left: 30px;
         margin: auto;
     } */
-    .form input{
+    .form input {
         width: 350px;
         margin: auto;
     }
-   
-    .sign h1,.sign p{
+
+    .sign h1, .sign p {
         text-align: center;
     }
-    .sign button{
-        margin-left:30px;
+
+    .sign button {
+        margin-left: 30px;
     }
+
     /* .button{
         width:350px;
         margin: auto;
