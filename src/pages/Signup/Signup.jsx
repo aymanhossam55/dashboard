@@ -1,7 +1,7 @@
 import "./signup.css";
 import image from "../../assets/signup.png";
 import {FcGoogle} from "react-icons/fc";
-import {AiOutlineEye, AiFillCheckCircle} from "react-icons/Ai";
+import {AiOutlineEye, AiFillCheckCircle} from "react-icons/ai";
 
 export const Signup = () => {
     return (
