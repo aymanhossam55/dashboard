@@ -71,7 +71,7 @@ const Root = () => {
     ]
     return (
         <div className='d-flex'>
-            <div className="sidebar me-4" style={{width: isOpen ? "240px" : "60px"}}>
+            <div className="sidebar" style={{width: isOpen ? "240px" : "60px"}}>
                 <div className="top_section" style={{padding: isOpen ? '20px 15px' : '20px 18px'}}>
                     <div className="logo" style={{display: isOpen ? "block" : "none"}}>
                         <img src={logo} alt='logo'/>
@@ -99,7 +99,7 @@ const Root = () => {
                     <span><LogoutIcon/></span> Log out
                 </button>
             </div>
-            <Container>
+            <Container fluid='md'>
                 <main className='content-pages mt-5'><Outlet/></main>
             </Container>
         </div>
