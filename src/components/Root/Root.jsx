@@ -8,19 +8,20 @@ import {NavLink} from "react-router-dom";
 import Diversity2Icon from '@mui/icons-material/Diversity2';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import SettingsIcon from '@mui/icons-material/Settings';
-import './sidebar.css'
+import './root.css'
 import logo from '../../assets/logo.png'
 import LogoutIcon from '@mui/icons-material/Logout';
 import {useState} from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
+import {Outlet} from "react-router-dom";
 
-const Sidebar = ({children}) => {
+const Root = () => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const menuItem = [
         {
-            path: "/",
+            path: '/dashboard',
             name: "Dashboard",
             icon: <AppsIcon/>
         },
@@ -99,9 +100,9 @@ const Sidebar = ({children}) => {
                 </button>
             </div>
             <Container>
-                <main className='content-pages mt-5'>{children}</main>
+                <main className='content-pages mt-5'><Outlet/></main>
             </Container>
         </div>
     );
 };
-export default Sidebar
+export default Root
