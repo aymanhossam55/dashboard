@@ -38,8 +38,12 @@
 .Leave_Type-leaves,
 .Reason-leaves,
 .Action-leaves{
-    margin-top: 1rem;
+    color: var(--second-color) !important;
 }
-.id-leaves{
+
+
+.Table-leaves{
     margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
 }

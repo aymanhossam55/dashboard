@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 // import { useEffect, useState } from 'react';
 // import Employee from '../../components/Employee';
+import Table from 'react-bootstrap/Table';
 
 export const Leaves = () => {
     // const [employees,,setemployee] = useState([]);
@@ -31,58 +32,50 @@ export const Leaves = () => {
                         </div>
                     </Col>
                 </Row>
-                <Row className='Leave-details d-flex'>
-                    <Col>
-                    <div className='id-leaves'>
-                        <p>id</p>
-                    </div>
-                    </Col>
-                    <Col>
-                    <div className='Name-leaves'>
-                        <p>Name</p>
-                    </div>
-                    </Col>
-                    <Col>
-                    <div className='Department_Role-leaves'>
-                        <p>Department Role</p>
-                    </div>
-                    </Col>
-                    <Col>
-                    <div className='Date-leaves'>
-                        <p>Date</p>
-                    </div>
-                    </Col>
-                    <Col>
-                    <div className='Status-leaves'>
-                        <p>Status</p>
-                    </div>
-                    </Col>
-                    <Col>
-                    <div className='Leave_From-leaves'>
-                        <p>Leave From</p>
-                    </div>
-                    </Col>
-                    <Col>
-                    <div className='Leave_To-leaves'>
-                        <p>Leave To</p>
-                    </div>
-                    </Col>
-                    <Col>
-                    <div className='Leave_Type-leaves'>
-                        <p>Leave Type</p>
-                    </div>
-                    </Col>
-                    <Col>
-                    <div className='Reason-leaves'>
-                        <p>Reason</p>
-                    </div>
-                    </Col>
-                    <Col>
-                    <div className='Action-leaves'>
-                        <p>Action</p>
-                    </div>
-                    </Col>
-                </Row>
+                <div className='Table-leaves'>
+                        <Table responsive borderless>
+            <thead>
+                <tr>
+                    <th className='id-leaves'> id</th>
+                {Array.from({ length: 1 }).map((Name) => (
+                    <th className='Name-leaves' key={Name}>Name</th>
+                ))}
+                {Array.from({ length: 1 }).map((Department_Role) => (
+                    <th className='Department_Role-leaves' key={Department_Role}>Depatment Role</th>
+                ))}
+                {Array.from({ length: 1 }).map((Date) => (
+                    <th className='Date-leaves' key={Date}>Date</th>
+                ))}
+                {Array.from({ length: 1 }).map((Status) => (
+                    <th className='Status-leaves' key={Status}>Status</th>
+                ))}
+                {Array.from({ length: 1 }).map((Leave_From) => (
+                    <th className='Leave_From-leaves' key={Leave_From}>Leave From</th>
+                ))}
+                {Array.from({ length: 1 }).map((Leave_To) => (
+                    <th className='Leave_To-leaves' key={Leave_To}>Leave To</th>
+                ))}
+                {Array.from({ length: 1 }).map((Leave_Type) => (
+                    <th className='Leave_Type-leaves' key={Leave_Type}>Leave Type</th>
+                ))}
+                {Array.from({ length: 1 }).map((Reason) => (
+                    <th className='Reason-leaves' key={Reason}>Reason</th>
+                ))}
+                {Array.from({ length: 1 }).map((Action) => (
+                    <th className='Action-leaves' key={Action}>Action</th>
+                ))}
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>1</td>
+                {Array.from({ length: 9 }).map((_, index) => (
+                    <td key={index}> {index}</td>
+                ))}
+                </tr>
+            </tbody>
+            </Table>
+            </div>
             </div>
         </div>
     )
